@@ -67,6 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagenes\1.jpg" />
+    <Content Include="Imagenes\10.jpg" />
+    <Content Include="Imagenes\11.jpg" />
+    <Content Include="Imagenes\12.jpg" />
+    <Content Include="Imagenes\13.jpg" />
+    <Content Include="Imagenes\2.jpg" />
+    <Content Include="Imagenes\3.jpg" />
+    <Content Include="Imagenes\4.jpg" />
+    <Content Include="Imagenes\5.jpg" />
+    <Content Include="Imagenes\6.jpg" />
+    <Content Include="Imagenes\7.jpg" />
+    <Content Include="Imagenes\8.jpg" />
+    <Content Include="Imagenes\9.jpg" />
     <Content Include="ListadoSucursalesSeleccionadas.aspx" />
     <Content Include="Web.config" />
     <Content Include="SeleccionarSucursales.aspx" />
