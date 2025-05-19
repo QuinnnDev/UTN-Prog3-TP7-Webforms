@@ -26,5 +26,19 @@ namespace TP7_Grupo_8.Conexion
             }
         }
 
+        public SqlDataAdapter ObtenerAdapdator(string consultaSQL)
+        {
+            SqlDataAdapter sqlAdapter;
+            try
+            {
+                sqlAdapter = new SqlDataAdapter(consultaSQL, ObtenerConexion());
+                return sqlAdapter;
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+        }
+
     }
 }
