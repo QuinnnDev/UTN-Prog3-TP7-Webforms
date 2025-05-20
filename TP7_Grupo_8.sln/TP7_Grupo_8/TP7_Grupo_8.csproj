@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\AccesoDatos.cs" />
+    <Compile Include="Conexion\GestionSucursales.cs" />
     <Compile Include="ListadoSucursalesSeleccionadas.aspx.cs">
       <DependentUpon>ListadoSucursalesSeleccionadas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

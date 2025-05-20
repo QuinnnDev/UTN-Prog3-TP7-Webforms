@@ -12,7 +12,19 @@ namespace TP7_Grupo_8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                CargarListView();
+            }
+        }
 
+        private void CargarListView()
+        {
+            GestionSucursales gestionSucu = new GestionSucursales();
+            lvSucursales.DataSource = gestionSucu.ObtenerTodosLosDatos();
+            lvSucursales.DataBind();
         }
     }
 }
+
+
