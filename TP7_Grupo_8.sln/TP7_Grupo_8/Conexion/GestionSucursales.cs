@@ -20,8 +20,8 @@ namespace TP7_Grupo_8
 
         public DataTable ObtenerTodosLosDatos()
         {
-            string consulta = "SELECT * FROM Sucursales";
-            return ObtenerTabla("Sucursales", consulta);
+            string consulta = "SELECT * FROM Sucursal";
+            return ObtenerTabla("Sucursal", consulta);
         }
     }
 }

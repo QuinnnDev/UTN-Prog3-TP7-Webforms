@@ -10,7 +10,7 @@ namespace TP7_Grupo_8.Conexion
     public class AccesoDatos
     {
 
-        string stringConexion = @"Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
+        string stringConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";
 
         public SqlConnection ObtenerConexion()
         {
@@ -24,6 +24,7 @@ namespace TP7_Grupo_8.Conexion
             {
                 return null;
             }
+
         }
 
         public SqlDataAdapter ObtenerAdapdator(string consultaSQL)

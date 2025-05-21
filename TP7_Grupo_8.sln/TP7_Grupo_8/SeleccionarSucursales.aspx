@@ -117,7 +117,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1" GroupItemCount="3">
+                        <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" GroupItemCount="3">
                             <%--<AlternatingItemTemplate>
                                 <td runat="server" style="background-color:#FFF8DC;">Id_Sucursal:&nbsp;<asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
                                     <br />
@@ -184,6 +184,9 @@
                                     <br />
                                     URL_Imagen_Sucursal:
                                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' />
+                                    <br />
+                                    <br />
+                                    <asp:Button ID="BtnSeleccionar" runat="server" CommandArgument='<%# Eval("Id_Sucursal") + "-" + Eval("NombreSucursal") + "-" + Eval("DescripcionSucursal") + "-" + Eval("URL_Imagen_Sucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command" Text="Seleccionar" />
                                     <br /></td>
                             </ItemTemplate>
                             <LayoutTemplate>

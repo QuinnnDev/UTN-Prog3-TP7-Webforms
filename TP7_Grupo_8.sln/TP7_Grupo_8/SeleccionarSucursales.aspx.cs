@@ -18,11 +18,20 @@ namespace TP7_Grupo_8
             }
         }
 
+        
         private void CargarListView()
         {
             GestionSucursales gestionSucu = new GestionSucursales();
             lvSucursales.DataSource = gestionSucu.ObtenerTodosLosDatos();
             lvSucursales.DataBind();
+        }
+
+        protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)
+        {
+            if(e.CommandName == "eventoSeleccionar")
+            {
+                Session["Seleccionado"] = e.CommandArgument;
+            }
         }
     }
 }
