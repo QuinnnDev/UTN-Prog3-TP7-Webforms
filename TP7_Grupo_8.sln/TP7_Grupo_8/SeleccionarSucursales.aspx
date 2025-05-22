@@ -186,7 +186,7 @@
                                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' />
                                     <br />
                                     <br />
-                                    <asp:Button ID="BtnSeleccionar" runat="server" CommandArgument='<%# Eval("Id_Sucursal") + "-" + Eval("NombreSucursal") + "-" + Eval("DescripcionSucursal") + "-" + Eval("URL_Imagen_Sucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command" Text="Seleccionar" />
+                                    <asp:Button ID="BtnSeleccionar" runat="server" CommandArgument='<%# Eval("Id_Sucursal") + "-" + Eval("NombreSucursal") + "-" + Eval("DescripcionSucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command" Text="Seleccionar" />
                                     <br /></td>
                             </ItemTemplate>
                             <LayoutTemplate>
@@ -343,7 +343,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" ProviderName="<%$ ConnectionStrings:BDSucursalesConnectionString2.ProviderName %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

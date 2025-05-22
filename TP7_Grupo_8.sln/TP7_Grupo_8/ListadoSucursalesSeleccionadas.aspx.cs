@@ -12,6 +12,20 @@ namespace TP7_Grupo_8
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack) 
+            {
+                if (Session["Seleccionado"] != null)
+                {
+                    gvSucursalesSeleccionadas.DataSource = Session["Seleccionado"];
+                    gvSucursalesSeleccionadas.DataBind();
+                }
+                else
+                {
+                    lblMensaje.Text = "No hay datos de sucursales seleccionadas";
+                }
+            }
         }
+
+
     }
 }

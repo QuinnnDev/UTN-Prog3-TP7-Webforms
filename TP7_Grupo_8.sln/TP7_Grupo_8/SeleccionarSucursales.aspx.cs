@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -30,7 +31,42 @@ namespace TP7_Grupo_8
         {
             if(e.CommandName == "eventoSeleccionar")
             {
-                Session["Seleccionado"] = e.CommandArgument;
+                DataTable tabla;
+                if (Session["Seleccionado"] == null)
+                {
+                    tabla = new DataTable();
+                    tabla.Columns.Add("ID_SUCURSAL");
+                    tabla.Columns.Add("NOMBRE");
+                    tabla.Columns.Add("DESCRIPCION");
+                }
+                else
+                {
+                    tabla = (DataTable)Session["Seleccionado"];
+                }
+
+                ///GUARDAR SELECCIONADO EN VARIABLES
+
+                ///command argument: 
+                ///                     Eval("Id_SucursalLabel") + "-" + Eval("NombreSucursalLabel") + "-" + Eval("DescripcionSucursalLabel")
+
+                string datos = e.CommandArgument.ToString();
+
+                string IdSucursal =     datos.Split('-')[0];
+                string NombreProducto = datos.Split('-')[1];
+                string Descripcion =    datos.Split('-')[2];
+                
+                ///GUARDAR LAS VARIABLES EN SESSION
+                
+
+                DataRow nuevaFila = tabla.NewRow();
+                nuevaFila["ID_SUCURSAL"] = IdSucursal;
+                nuevaFila["NOMBRE"] = NombreProducto;
+                nuevaFila["DESCRIPCION"] = Descripcion;
+                tabla.Rows.Add(nuevaFila);
+
+                Session["Seleccionado"] = tabla;
+
+
             }
         }
     }
