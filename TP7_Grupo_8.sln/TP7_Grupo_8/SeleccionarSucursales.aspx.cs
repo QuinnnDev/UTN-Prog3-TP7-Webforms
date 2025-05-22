@@ -69,6 +69,13 @@ namespace TP7_Grupo_8
 
             }
         }
+
+        protected void btnBuscarNombre_Click(object sender, EventArgs e)
+        {
+            GestionSucursales gestionSucursales = new GestionSucursales();
+            lvSucursales.DataSource = gestionSucursales.ObtenerTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal FROM Sucursal WHERE NombreSucursal LIKE  '" + txtBuscarNombre.Text + "%'");
+            lvSucursales.DataBind();
+        }
     }
 }
 

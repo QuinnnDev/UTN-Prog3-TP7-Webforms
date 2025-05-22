@@ -11,10 +11,16 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 170px;
+            width: 205px;
         }
         .auto-style3 {
             width: 222px;
+        }
+        .auto-style4 {
+            width: 219px;
+        }
+        .auto-style5 {
+            width: 223px;
         }
         </style>
 </head>
@@ -81,8 +87,12 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2">Ingrese nombre de Sucursal:</td>
+                    <td>
+                        <asp:TextBox ID="txtBuscarNombre" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnBuscarNombre" runat="server" OnClick="btnBuscarNombre_Click" Text="Buscar" />
+                    </td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -174,16 +184,12 @@
                                     <br /></td>
                             </InsertItemTemplate>
                             <ItemTemplate>
-                                <td runat="server" style="background-color:#DCDCDC;color: #000000;">Id_Sucursal: <asp:Label ID="Id_SucursalLabel" runat="server" Text='<%# Eval("Id_Sucursal") %>' />
+                                <td runat="server" style="background-color:#DCDCDC;color: #000000;" class="auto-style4">&nbsp;<asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
                                     <br />
-                                    NombreSucursal:
-                                    <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
-                                    <br />
-                                    DescripcionSucursal:
-                                    <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
-                                    <br />
-                                    URL_Imagen_Sucursal:
                                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("URL_Imagen_Sucursal") %>' />
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>' />
                                     <br />
                                     <br />
                                     <asp:Button ID="BtnSeleccionar" runat="server" CommandArgument='<%# Eval("Id_Sucursal") + "-" + Eval("NombreSucursal") + "-" + Eval("DescripcionSucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command" Text="Seleccionar" />
@@ -193,7 +199,7 @@
                                 <table runat="server">
                                     <tr runat="server">
                                         <td runat="server">
-                                            <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                            <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;" class="auto-style5">
                                                 <tr id="groupPlaceholder" runat="server">
                                                 </tr>
                                             </table>
@@ -343,8 +349,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
