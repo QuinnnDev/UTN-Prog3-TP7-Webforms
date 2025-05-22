@@ -76,6 +76,17 @@ namespace TP7_Grupo_8
             lvSucursales.DataSource = gestionSucursales.ObtenerTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal FROM Sucursal WHERE NombreSucursal LIKE  '" + txtBuscarNombre.Text + "%'");
             lvSucursales.DataBind();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string idProvincia = btn.CommandArgument;
+            GestionSucursales gestionSucu = new GestionSucursales();
+
+            lvSucursales.DataSource = gestionSucu.ObtenerTabla("Sucursales", "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal FROM Sucursal WHERE Id_ProvinciaSucursal = " + idProvincia);
+            lvSucursales.DataBind();
+
+        }
     }
 }
 

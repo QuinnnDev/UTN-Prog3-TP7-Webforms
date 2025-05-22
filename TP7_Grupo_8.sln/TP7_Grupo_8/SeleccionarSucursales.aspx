@@ -22,6 +22,21 @@
         .auto-style5 {
             width: 223px;
         }
+        .auto-style6 {
+            height: 23px;
+        }
+        .auto-style7 {
+            width: 205px;
+            height: 23px;
+        }
+        .auto-style8 {
+            width: 222px;
+            height: 23px;
+        }
+        .auto-style9 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
         </style>
 </head>
 <body>
@@ -125,7 +140,15 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:DataList ID="dlBtnProvincias" runat="server" DataKeyField="Id_Provincia" DataSourceID="SqlDataSource2" Width="188px">
+                            <ItemTemplate>
+                                &nbsp;<br />
+                                <asp:Button ID="btnProvincia" runat="server" CommandArgument='<%# Eval("Id_Provincia") %>' CommandName="Filter" CssClass="auto-style9" Height="42px" OnClick="Button1_Click" Text='<%# Eval("DescripcionProvincia") %>' Width="235px" />
+                                <br />
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </td>
                     <td>
                         <asp:ListView ID="lvSucursales" runat="server" DataKeyNames="Id_Sucursal" GroupItemCount="3">
                             <%--<AlternatingItemTemplate>
@@ -380,21 +403,23 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style7">
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString2 %>" SelectCommand="SELECT [Id_Provincia], [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
+                    </td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
             </table>
         </div>
