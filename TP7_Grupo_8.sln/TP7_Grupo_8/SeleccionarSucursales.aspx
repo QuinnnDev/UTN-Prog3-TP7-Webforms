@@ -233,7 +233,7 @@
                                     </tr>
                                     <tr runat="server">
                                         <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
-                                            <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                                            <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
                                                 <Fields>
                                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                                     <asp:NumericPagerField />

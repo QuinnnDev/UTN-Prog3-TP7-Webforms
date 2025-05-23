@@ -93,7 +93,7 @@ namespace TP7_Grupo_8
             if (!string.IsNullOrEmpty(txtBuscarNombre.Text))
             {
                 lblErrorBusqueda.Text = string.Empty;
-                lvSucursales.DataSource = gestionSucursales.ObtenerTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal FROM Sucursal WHERE NombreSucursal LIKE  '" + txtBuscarNombre.Text + "%'");
+                lvSucursales.DataSource = gestionSucursales.ObtenerTabla("Sucursal", "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal FROM Sucursal WHERE NombreSucursal LIKE  '%" + txtBuscarNombre.Text + "%'");
                 lvSucursales.DataBind();
             }
             else
