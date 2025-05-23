@@ -14,6 +14,9 @@ namespace TP7_Grupo_8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblErrorBusqueda.Text = string.Empty;
+            lblErrorSeleccion.Text = string.Empty;
+
             if (!Page.IsPostBack)
             {
                 CargarListView();
@@ -111,6 +114,13 @@ namespace TP7_Grupo_8
             lvSucursales.DataSource = gestionSucu.ObtenerTabla("Sucursales", "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, URL_Imagen_Sucursal FROM Sucursal WHERE Id_ProvinciaSucursal = " + idProvincia);
             lvSucursales.DataBind();
 
+        }
+
+        protected void lvSucursales_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            DataPager pager = (DataPager)lvSucursales.FindControl("DataPager1");
+            pager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            CargarListView();
         }
     }
 }
