@@ -106,7 +106,8 @@
                     <td>
                         <asp:TextBox ID="txtBuscarNombre" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnBuscarNombre" runat="server" OnClick="btnBuscarNombre_Click" Text="Buscar" />
+                        <asp:Button ID="btnBuscarNombre" runat="server" OnClick="btnBuscarNombre_Click" Text="Buscar" style="height: 26px" />
+                        <asp:Label ID="lblErrorBusqueda" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
@@ -141,6 +142,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td class="auto-style2">
+                        <asp:Label ID="lblErrorSeleccion" runat="server" ForeColor="Red"></asp:Label>
                         <asp:DataList ID="dlBtnProvincias" runat="server" DataKeyField="Id_Provincia" DataSourceID="SqlDataSource2" Width="188px">
                             <ItemTemplate>
                                 &nbsp;<br />
